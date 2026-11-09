@@ -1,0 +1,32 @@
+What is a Context Window?:
+  Think of the context window as Claude's temporary working memory.
+
+  It is the amount of information Claude can keep available while working on your task.
+
+For example, suppose you ask Claude:
+  "Please troubleshoot my EKS deployment issue."
+
+Claude may read:
+  1. Your Terraform files.
+  2. Kubernetes deployment YAML files.
+  3. Helm values files.
+  4. Error logs.
+  5. Your previous conversation.
+  All this information consumes the context window.
+
+What happens when it becomes full? Claude generally handles this in a few ways:
+  1. Auto-compaction- Claude may summarize older conversation details to free up context.
+  2. Older details may be lost: Some original conversation details might no longer be available in full.
+  3. Eventually, limits apply: If there isn't enough room for additional input or output, Claude may require you to start a new session or reduce the amount of context.
+  
+2. Can we manually increase the context window?:
+  No, not directly.
+
+Claude Code provides an auto-compaction feature.
+
+For example:
+ - Context capacity- 200K tokens.
+ - Claude uses 180K tokens.
+  - Auto-compaction summarizes older conversation and tool outputs.
+  - Claude continues working with the summarized context.
+  - You can also control when compaction happens using /autocompact in Claude Code.
