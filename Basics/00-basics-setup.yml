@@ -1,0 +1,18 @@
+##Claude code Basics Setup,  
+2 types: 
+  1. Interactive Mode - The interactive console - launched by just typing claude - is where you work with the agent. a conversation that keeps context, shows you diffs before it applies them, and asks permission as it goes.
+
+  2. Headless Mode - Headless mode answers once and leaves
+
+Slash commands: Inside the console, lines starting with / are commands, not prompts.
+
+Command	What it does:
+  /init:	Analyzes the project and writes CLAUDE.md - the project memory Claude reads every session.
+  /model:	Switches models mid-conversation (opus, sonnet, haiku)
+  /help:	Lists everything else
+  /exit:	Leaves the console (Ctrl+C twice also works)
+
+Ex:
+mkdir -p /root/myapp && cd /root/myapp
+printf '#!/bin/bash\necho "Hello from myapp"\n' > run.sh
+printf 'A tiny demo app for the Claude Code lab.\n' > README.md

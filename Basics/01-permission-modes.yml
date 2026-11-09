@@ -1,0 +1,28 @@
+Four common modes:
+
+  1. default:	Prompts when an action needs approval	Normal work, unfamiliar code acceptEdits	Automatically accepts file edits; other actions follow applicable permissions	You trust the edits and want fewer prompts.
+
+  2. plan:	Explores and plans without implementing changes	You want a plan or a review first.
+
+  3. bypassPermissions:	Bypasses permission checks; use only in isolated environments	Rarely, and only somewhere you can throw away.
+
+Setting a mode: 
+  claude -p --permission-mode plan "Review this repo and suggest a cleanup plan"
+  claude -p --permission-mode acceptEdits "Create a script at /root/hello.sh"
+
+Allowlists: rules instead of modes
+  Modes are broad. For finer control, list the specific actions Claude may take without asking. These go under permissions.allow in a settings file, as rule strings:
+
+EX:
+  {
+    "permissions": {
+      "allow": [
+        "Bash(git status:*)",
+        "Read",
+        "Edit"
+      ]
+    }
+  }
+
+IMP: Better to delegate this task to claude, 
+  - Switch to the project folder, give a prompt like "Write a permissions.allow list for this project, and save it to claude-settings.json, which should have Read and Bash(git status:*)", and let Claude do the work.
