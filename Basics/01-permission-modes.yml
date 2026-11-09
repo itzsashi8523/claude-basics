@@ -26,3 +26,11 @@ EX:
 
 IMP: Better to delegate this task to claude, 
   - Switch to the project folder, give a prompt like "Write a permissions.allow list for this project, and save it to claude-settings.json, which should have Read and Bash(git status:*)", and let Claude do the work.
+
+Example: 
+#claude -p "Explain the difference between a process and a thread in two sentences." >> /root/claude-answer.txt
+
+Example:
+#mkdir -p /root/dns
+#claude -p "Explain what DNS is in one sentence." --output-format json > /root/dns/answer.json
+#jq -r '.result' /root/dns/answer.json > /root/dns/answer.txt
