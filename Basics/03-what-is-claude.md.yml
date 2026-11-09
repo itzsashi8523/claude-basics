@@ -1,0 +1,24 @@
+What CLAUDE.md is:
+  CLAUDE.md is your project's memory. Claude reads it at the start of every session, before you type a single word, so anything in it is already known. Write "tests run with make test" once and you stop repeating it in every new conversation.
+
+Where it lives?:
+  Claude looks for memory in a few places and merges what it finds. 
+
+Location	                  Scope
+------------                ---------------------------------------------------------
+CLAUDE.md                   at the repo root of This project, shared with the team via git
+
+.claude/CLAUDE.md	          This project, if you prefer it out of the root
+
+~/.claude/CLAUDE.md	        You, across every project on this machine
+
+CLAUDE.local.md	            Personal instructions for this project; add it to .gitignore
+
+#The repo-root file is the common one: it travels with the code, so everyone working in the project (and every future session) starts from the same facts.
+
+IMP:
+Easy way to remember:
+- CLAUDE.md → Project instructions.
+- .claude/CLAUDE.md → Same project instructions, different location.
+- ~/.claude/CLAUDE.md → Your global instructions.
+- CLAUDE.local.md → Your private project instructions.
