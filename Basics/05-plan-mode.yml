@@ -1,0 +1,35 @@
+What is Plan Mode in Claude Code?:
+  - Plan Mode allows Claude to analyze your requirements and prepare an implementation plan BEFORE making any code changes.
+  - Think of it as asking Claude to think through the solution first, get your approval, and then start implementing it.
+
+How does it work?:
+  - Suppose you want to upgrade your EKS cluster from Kubernetes 1.35 to 1.36.
+
+Without Plan Mode:
+  1. You ask Claude to upgrade EKS.
+  2. Claude starts modifying Terraform files.
+  3. It may make changes before you review the approach.
+
+With Plan Mode: 
+  1. Claude analyzes your existing Terraform code.
+  2. Checks EKS versions, addons, node groups and dependencies.
+  3. Prepares a step-by-step upgrade plan.
+  4. You review and approve the plan.
+  5. Claude starts implementing the changes after you exit Plan Mode.
+
+How to enable it?
+  In Claude Code:
+    - Press Shift + Tab to switch to Plan Mode (depending on your current mode).
+    - Or start Claude Code using:
+#claude --permission-mode plan
+
+#if we do NOT specify --permission-mode plan, Claude will default to normal mode.
+Claude Code starts in the default permission mode.
+
+In this mode:
+- Claude can read files.
+- Claude can edit files, subject to permission rules.
+- Claude asks for approval before executing commands that require permission.
+- It follows your configured permission settings.
+You can explicitly specify it:
+#claude --permission-mode default
