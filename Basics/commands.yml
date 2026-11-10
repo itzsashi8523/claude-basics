@@ -1,0 +1,10 @@
+/clear: - 
+  Clears the current conversation context.
+  Starts a fresh conversation in the same project.
+  Does not carry forward the previous conversation's context.
+Example: You finished troubleshooting one EKS issue and want to start working on a completely different task.
+
+/compact: - 
+  Forces an immediate compaction of the current conversation context.
+  This can help free up space in the context window when it's getting full.
+  Example: You're in the middle of a complex debugging session and want to make room for new information.

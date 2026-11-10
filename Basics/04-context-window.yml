@@ -30,3 +30,29 @@ For example:
   - Auto-compaction summarizes older conversation and tool outputs.
   - Claude continues working with the summarized context.
   - You can also control when compaction happens using /autocompact in Claude Code.
+
+can we see what are the context window limits from any claude settings or config files?:
+  
+  No, the context window limits are not exposed in any settings or configuration files. The limits are determined by the underlying architecture of Claude and are not user-configurable.
+Try these three commands in Claude Code:
+    Command	     Purpose
+    --------     ------- 
+    /status	  |  Check active model and settings
+    /context	|  Check current context usage
+    /model	  |  Check available models
+
+What fills it?:
+  Context grows fast, often faster than you expect.
+
+  - Your prompts and Claude's replies
+  - Every file Claude opens to understand your code
+  - Command output, test logs, error dumps, search results
+
+EX: A long debugging session that reads dozens of files can pack the window without you doing anything unusual. It is normal, and it is manageable.
+
+When context gets full or muddled:
+  You can feel it when the window is overloaded. Watch for
+    - Drift. Answers wander off from what you actually asked.
+    - Forgetting. Claude loses an instruction you gave near the start.
+    - Repetition. It re-reads files it already saw, or re-asks a settled question.
+    - Sluggish, hedged answers that no longer feel sharp.
