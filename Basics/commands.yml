@@ -1,10 +1,22 @@
-/clear: - 
-  Clears the current conversation context.
-  Starts a fresh conversation in the same project.
-  Does not carry forward the previous conversation's context.
-Example: You finished troubleshooting one EKS issue and want to start working on a completely different task.
+==============================================================================================================
+|/clear: - 
+|  - Clears the current conversation context.
+|  - Starts a fresh conversation in the same project.
+|  - Does not carry forward the previous conversation's context.
+|Example: You finished troubleshooting one EKS issue and want to start working on a completely different task.
+|  
+|/compact: (Free up context)
+|  - Summarizes the existing conversation.
+|  - Removes some older conversation details from active context.
+|  - Preserves important information so Claude can continue working.
+|  - Frees up context space.
+|Example: You have been troubleshooting an EKS issue for 2 hours. Context usage is high, but you want Claude 
+|to continue troubleshooting.
+|
+|  - Use /clear when I finish a task and start an unrelated one. It wipes the conversation so Claude is not 
+|distracted by old, irrelevant work.
+|
+|  - Use /compact when I am still on the same task but the window is filling up. It summarizes what we have 
+|done so far and keeps going with less noise.
+==============================================================================================================
 
-/compact: - 
-  Forces an immediate compaction of the current conversation context.
-  This can help free up space in the context window when it's getting full.
-  Example: You're in the middle of a complex debugging session and want to make room for new information.
